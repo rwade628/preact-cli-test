@@ -29,6 +29,8 @@
     "preact-material-components": "^1.2.0",
     "preact-redux": "^2.0.3",
     "preact-router": "^2.5.7",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   }
 }

@@ -3,16 +3,13 @@ import { h, Component } from "preact";
 
 //State
 import { connect } from 'preact-redux';
-import { bindActions } from '../../redux/util';
-import reduce from '../../redux/reducers';
-import * as actions from '../../redux/actions';
+import {getList, setSelected} from '../../redux/reducer';
 
 // Material Components
 import GridList from "preact-material-components/GridList";
 
 // Class
-@connect(reduce, bindActions(actions))
-export default class GridListPage extends Component {
+class List extends Component {
   componentDidMount() {
     this.props.getList(this.props.folder)
   }
@@ -62,3 +59,7 @@ export default class GridListPage extends Component {
     );
   }
 }
+
+const mapState = ({list, selected}) => ({list, selected});
+const mapDispatch = {getList, setSelected};
+export default connect(mapState, mapDispatch)(List);

@@ -1,13 +1,10 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
-import { bindActions } from '../../redux/util';
-import reduce from '../../redux/reducers';
-import * as actions from '../../redux/actions';
+import {addTodo, removeTodo} from '../../redux/reducer';
 import TodoItem from './todo-item';
 import style from './style';
 
-@connect(reduce, bindActions(actions))
-export default class Todo extends Component {
+class Todo extends Component {
 	addTodos = () => {
 		const { text } = this.state;
 		this.setState({ text: '' });
@@ -38,3 +35,7 @@ export default class Todo extends Component {
 		);
 	}
 }
+
+const mapState = ({todos}) => ({todos});
+const mapDispatch = {addTodo, removeTodo};
+export default connect(mapState, mapDispatch)(Todo);
