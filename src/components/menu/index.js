@@ -81,6 +81,10 @@ export default class Menu extends Component {
               <List.ItemIcon>note-outline</List.ItemIcon>
               Todo
             </Drawer.DrawerItem>
+            <Drawer.DrawerItem href="/list/other" onClick={this._onClick}>
+              <List.ItemIcon>camera</List.ItemIcon>
+              Todo
+            </Drawer.DrawerItem>
 		</Drawer.TemporaryDrawerContent>
 	</Drawer.TemporaryDrawer>
 	);

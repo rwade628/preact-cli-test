@@ -11,6 +11,7 @@ import Toolbar from "preact-material-components/Toolbar";
 import Home from '../../routes/home';
 import Profile from '../../routes/profile';
 import Todo from '../../routes/todo';
+import List from '../../routes/list'
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -92,6 +93,7 @@ export default class App extends Component {
 						<Profile path="/profile/" user="me" />
 						<Profile path="/profile/:user" />
 						<Todo path="/todo" />
+						<List path="/list/:folder" />
 					</Router>
 				</div>
 			</Provider>

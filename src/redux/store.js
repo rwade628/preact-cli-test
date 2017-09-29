@@ -12,11 +12,23 @@ let ACTIONS = {
 	REMOVE_TODO: ({ todos, ...state }, { todo }) => ({
 		todos: todos.filter( i => i!==todo ),
 		...state
+	}),
+
+	GET_LIST: ({ list, ...state }, { response }) => ({
+		list: response,
+		...state
+	}),
+
+	SET_SELECTED: ({ selected, ...state }, { select }) => ({
+		selected: select,
+		...state
 	})
 };
 
 const INITIAL = {
-	todos: []
+	todos: [],
+	list: [],
+	selected: {}
 };
 
 export default createStore( (state, action) => (
